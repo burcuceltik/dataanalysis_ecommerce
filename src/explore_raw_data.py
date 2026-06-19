@@ -13,6 +13,7 @@ def summarize_csv(path: Path) -> dict:
         "columns": len(df.columns),
         "column_names": list(df.columns),
         "missing_values": int(df.isna().sum().sum()),
+        "duplicate_rows": int(df.duplicated().sum()),
     }
 
 
@@ -26,9 +27,8 @@ def main() -> None:
 
     summaries = [summarize_csv(path) for path in csv_files]
     summary_df = pd.DataFrame(summaries)
-    print(summary_df[["file", "rows", "columns", "missing_values"]])
+    print(summary_df[["file", "rows", "columns", "missing_values", "duplicate_rows"]])
 
 
 if __name__ == "__main__":
     main()
-

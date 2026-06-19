@@ -63,4 +63,12 @@ verianalizi/
 
 ## Status
 
-Project setup is ready. Next step: download the dataset and inspect the CSV files.
+Project setup is ready. The dataset is stored locally in `data/raw/`.
+
+Current work:
+
+- basic data profiling
+- first PostgreSQL schema draft
+- ER diagram draft
+
+Next step: load the CSV files into PostgreSQL.
